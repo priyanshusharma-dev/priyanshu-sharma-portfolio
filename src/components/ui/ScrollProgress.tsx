@@ -1,0 +1,35 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ScrollProgress() {
+  const barRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!barRef.current) return;
+    gsap.to(barRef.current, {
+      scaleX: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.3,
+      },
+    });
+  }, []);
+
+  return (
+    <div className="fixed top-0 left-0 right-0 h-2px z-150 pointer-events-none">
+      <div
+        ref={barRef}
+        className="h-full bg-emerald-500 origin-left scale-x-0"
+        style={{ boxShadow: "0 0 12px rgba(16,185,129,0.6)" }}
+      />
+    </div>
+  );
+}

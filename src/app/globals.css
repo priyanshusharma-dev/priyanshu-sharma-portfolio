@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Custom font families */
+@theme {
+  --font-sans: var(--font-plus-jakarta), var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+  --font-syne: var(--font-syne), sans-serif;
+}
+
+/* Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #f5f5f0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lenis requires this */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* Hidden default cursor on interactive elements when custom cursor is active */
+@media (pointer: fine) {
+  a, button, [data-cursor-hover] { cursor: none; }
+}
+
+/* Custom scrollbar — thin, dark, royal green accent */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #059669; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+/* Selection color — royal green accent */
+::selection { background: #059669; color: #fff; }
+
+/* Section offset for anchor links */
+section[id] { scroll-margin-top: 0; }
+
+/* Marquee keyframes (used by Marquee component) */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-33.333%); }
+  to { transform: translateX(0); }
+}
+
+/* Utility classes */
+.font-serif { font-family: var(--font-serif); }
+.font-syne { font-family: var(--font-syne); }
+.text-accent { color: #059669; }
+.bg-accent { background-color: #059669; }
+.border-accent { border-color: #059669; }
