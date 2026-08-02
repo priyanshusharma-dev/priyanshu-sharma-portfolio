@@ -9,7 +9,7 @@ export default function SpotlightCursor() {
   const [pos, setPos] = useState({ x: 50, y: 50 });
 
   useEffect(() => {
-    const handleMove = (e) => {
+    const handleMove = (e: MouseEvent) => {
       // Convert mouse position to % of viewport
       setPos({
         x: (e.clientX / window.innerWidth) * 100,

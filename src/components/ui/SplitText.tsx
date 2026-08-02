@@ -6,18 +6,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/*
- *  Splits a string into wrapped letters and animates them
- *  sliding up into view.
- */
+type SupportedTags = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "div";
+
+interface SplitTextProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  as?: SupportedTags;
+  triggerOnScroll?: boolean;
+}
+
 export default function SplitText({
   text,
   className = "",
   delay = 0,
   as: Component = "h1",
   triggerOnScroll = false,
-}) {
-  const containerRef = useRef(null);
+}: SplitTextProps) {
+  const containerRef = useRef<HTMLHeadingElement | HTMLParagraphElement | HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -54,9 +60,11 @@ export default function SplitText({
     </span>
   ));
 
+  const Tag = Component as SupportedTags;
+
   return (
-    <Component ref={containerRef} className={className}>
+    <Tag ref={containerRef as any} className={className}>
       {letters}
-    </Component>
+    </Tag>
   );
 }

@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-export const useScrollDirection = () => {
-  const [scrollDir, setScrollDir] = useState("up");
+export const useScrollDirection = (): "up" | "down" => {
+  const [scrollDir, setScrollDir] = useState<"up" | "down">("up");
 
   useEffect(() => {
-    let lastScrollY = window.pageYOffset;
+    let lastScrollY = window.scrollY;
     const updateScrollDir = () => {
-      const scrollY = window.pageYOffset;
+      const scrollY = window.scrollY;
       setScrollDir(scrollY > lastScrollY ? "down" : "up");
       lastScrollY = scrollY;
     };

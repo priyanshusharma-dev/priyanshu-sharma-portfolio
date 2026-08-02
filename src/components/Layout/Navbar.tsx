@@ -56,10 +56,10 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleNavClick = (e, href) => {
-  setMobileOpen(false);
-  console.log("Navigating to:", href); // Using href fixes the ESLint error
-};
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    setMobileOpen(false);
+    console.log("Navigating to:", href);
+  };
 
   return (
     <nav
