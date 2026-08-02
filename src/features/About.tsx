@@ -36,13 +36,13 @@ export default function About() {
           {/* About text - styled with highlighted keywords */}
           <ScrollReveal delay={0.3} className="md:col-span-7 space-y-6 text-base md:text-lg text-white/70 leading-relaxed font-light">
             <p>
-              I am a <span className="text-white font-normal">Computer Science & Engineering</span> student passionate about crafting high-performance <span className="text-emerald-400 font-medium">modern web applications</span>, interactive 3D web experiences, and <span className="text-emerald-400 font-medium">AI-driven developer tools</span>.
+              I am a <span className="text-white font-normal">Computer Science & Engineering</span> student passionate about crafting high-performance <span className="text-emerald-400 font-medium">modern web applications</span>, <span className="text-emerald-400 font-medium">decentralized Web3 platforms</span>, and <span className="text-emerald-400 font-medium">AI-driven developer tools</span>.
             </p>
             <p>
-              My stack spans the modern web ecosystem (<span className="text-white font-medium">Next.js, React, TypeScript, Tailwind CSS, Three.js</span>), backend services with <span className="text-white font-medium">Node.js</span>, and intelligent developer automation using <span className="text-white font-medium">Python & local LLMs</span>. I thrive on building production-grade software that bridges robust engineering with <span className="italic font-serif text-emerald-400">intuitive, fluid UI design</span>.
+              My stack spans the modern web & blockchain ecosystem (<span className="text-white font-medium">Next.js, React, TypeScript, Solidity, Ethers.js, Hardhat</span>), interactive 3D web experiences using <span className="text-white font-medium">Three.js</span>, and intelligent developer automation with <span className="text-white font-medium">Python & local LLMs</span>. I thrive on building production-grade software that bridges robust smart contracts and web engineering with <span className="italic font-serif text-emerald-400">intuitive, fluid UI design</span>.
             </p>
             <p>
-              Dedicated to technical craftsmanship and continuous growth, I actively sharpen my <span className="text-white font-medium">Data Structures & Algorithms</span> skills, automate CI/CD workflows, and build real-world software projects.
+              Dedicated to technical craftsmanship and continuous growth, I actively sharpen my <span className="text-white font-medium">Data Structures & Algorithms</span> skills, deploy dApps to testnets like <span className="text-white font-medium">Sepolia</span>, and build real-world software projects.
             </p>
           </ScrollReveal>
         </div>
