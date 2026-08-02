@@ -43,6 +43,13 @@ export const metadata: Metadata = {
   ),
   title: titleText,
   description: descriptionText,
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     title: titleText,
     description: descriptionText,
