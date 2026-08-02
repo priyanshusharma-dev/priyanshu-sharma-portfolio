@@ -48,19 +48,19 @@ export const portfolioData: PortfolioData = {
   skillCategories: [
     {
       title: "Languages",
-      skills: ["TypeScript", "JavaScript", "Python", "HTML/CSS", "GLSL"],
+      skills: ["JavaScript", "TypeScript", "Solidity", "HTML5", "CSS3", "Python"],
     },
     {
       title: "Frameworks & Libraries",
-      skills: ["Next.js", "React", "Node.js", "Tailwind CSS"],
+      skills: ["React", "Next.js", "Ethers.js", "Hardhat", "Node.js", "Tailwind CSS"],
     },
     {
       title: "Creative & Animation",
-      skills: ["Three.js", "React Three Fiber", "GSAP", "Framer Motion", "Lenis"],
+      skills: ["Three.js", "GSAP", "Framer Motion"],
     },
     {
       title: "Tools & Ecosystem",
-      skills: ["Git", "GitHub Actions", "ESLint", "Turbopack", "Pydantic"],
+      skills: ["Git", "GitHub", "MetaMask / Web3", "Sepolia Testnet", "VS Code", "Vercel"],
     },
   ],
 };

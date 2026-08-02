@@ -4,10 +4,10 @@ import SplitText from '../components/ui/SplitText'
 import { motion } from "framer-motion";
 
 const skillCategories = [
-  { title: "Languages", icon: "◆", skills: ["JavaScript", "TypeScript", "HTML5", "CSS3", "Python"] },
-  { title: "Frameworks", icon: "◇", skills: ["React", "Next.js", "Node.js", "Tailwind CSS"] },
-  { title: "Creative", icon: "✦", skills: ["Three.js", "WebGL / GLSL", "GSAP", "Framer Motion"] },
-  { title: "Tools", icon: "/", skills: ["Git", "GitHub", "VS Code", "Vercel", "Figma"] },
+  { title: "Languages", icon: "◆", skills: ["JavaScript", "TypeScript", "Solidity", "HTML5", "CSS3", "Python"] },
+  { title: "Frameworks", icon: "◇", skills: ["React", "Next.js", "Ethers.js", "Hardhat", "Node.js", "Tailwind CSS"] },
+  { title: "Creative", icon: "✦", skills: ["Three.js", "GSAP", "Framer Motion"] },
+  { title: "Tools", icon: "/", skills: ["Git", "GitHub", "MetaMask / Web3", "Sepolia Testnet", "VS Code", "Vercel"] },
 ];
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
