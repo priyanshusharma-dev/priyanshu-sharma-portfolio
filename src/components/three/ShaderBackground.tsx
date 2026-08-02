@@ -99,6 +99,12 @@ function ShaderPlane({ isMobile }: { isMobile: boolean }) {
       mouseTarget.current.x += (state.pointer.x - mouseTarget.current.x) * 0.05; // Used R3F's native state.pointer
       mouseTarget.current.y += (state.pointer.y - mouseTarget.current.y) * 0.05;
       mat.uniforms.uMouse.value.copy(mouseTarget.current);
+    } else if (isMobile && mat.uniforms.uMouse) {
+      // Gentle ambient light drift for touch screens
+      const t = state.clock.elapsedTime * 0.5;
+      mouseTarget.current.x = Math.sin(t) * 0.3;
+      mouseTarget.current.y = Math.cos(t * 0.8) * 0.3;
+      mat.uniforms.uMouse.value.copy(mouseTarget.current);
     }
   });
 
@@ -131,26 +137,16 @@ export default function ShaderBackground() {
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none">
-      {isMobile ? (
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0a1a] to-black">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-emerald-800/30 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-violet-700/20 rounded-full blur-[120px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black"></div>
-        </div>
-      ) : (
-        <>
-          <Canvas
-            camera={{ position: [0, 0, 1], fov: 50 }}
-            dpr={[1, 1.5]}
-            gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
-          >
-            <Suspense fallback={null}>
-              <ShaderPlane isMobile={isMobile} />
-            </Suspense>
-          </Canvas>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black pointer-events-none"></div>
-        </>
-      )}
+      <Canvas
+        camera={{ position: [0, 0, 1], fov: 50 }}
+        dpr={isMobile ? [1, 1] : [1, 1.5]}
+        gl={{ antialias: !isMobile, alpha: true, powerPreference: "high-performance" }}
+      >
+        <Suspense fallback={null}>
+          <ShaderPlane isMobile={isMobile} />
+        </Suspense>
+      </Canvas>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black pointer-events-none"></div>
     </div>
   );
 }
